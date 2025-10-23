@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+   repository: DOCKER_USERNAME/flask-app
+   tag: latest
+   pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIp
+  port: 5000
+
+resources: {}
