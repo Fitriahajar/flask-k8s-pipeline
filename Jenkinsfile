@@ -4,12 +4,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        echo 'Build stage started'
         sh 'docker build -t flask-app .'
       }
     }
 
     stage('Test') {
       steps {
+        echo 'Test stage started'
         sh 'echo "No tests defined."'
       }
     }
@@ -26,6 +28,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
+        echo 'Deploy stage started'
         sh 'helm upgrade --install flask-app ./helm-chart'
       }
     }
